@@ -17,7 +17,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 connectDb()
 var cors = require('cors');
 const initSockets = require('./src/sockets');
-app.use(cors())
+app.use(cors({
+    origin: 'https://next-js-example-drab.vercel.app'
+}))
 
 
 const socketIo = require("socket.io")(server,{

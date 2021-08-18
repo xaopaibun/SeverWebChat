@@ -22,7 +22,7 @@ app.use(cors())
 
 const socketIo = require("socket.io")(server,{
   cors: {
-    origin: "https://webappchatexample.herokuapp.com", 
+    origin: "https://next-js-example-drab.vercel.app", 
     methods: ["GET", "POST"],
     credentials: true
   }

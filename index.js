@@ -1,6 +1,7 @@
 var express = require('express')
 const http = require("http");
 const multer = require('multer')
+const path = require('path');
 const connectDb = require('./src/config/connectDb');
 var app = express()
 const bodyParser = require("body-parser");
@@ -10,6 +11,8 @@ const UploadImagesController = require('./src/controllers/upload-image.controlle
 const server = http.createServer(app);
 const chatModel = require('./src/models/test.model');
 
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 app.use(bodyParser.json());
 require('dotenv').config();
 // parse requests of content-type: application/x-www-form-urlencoded
